@@ -4,7 +4,7 @@ sys.path.append(os.path.abspath('../'))
 
 import rabbitx
 from rabbitx import const
-from rabbitx.client import Client, CandlePeriod
+from rabbitx_python.client import Client, CandlePeriod
 import pytest
 from datetime import datetime
 

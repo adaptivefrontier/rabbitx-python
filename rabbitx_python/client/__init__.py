@@ -1,17 +1,17 @@
-from rabbitx.client.endpoints.account import AccountGroup
-from rabbitx.client.endpoints.candle import CandleGroup, CandlePeriod
-from rabbitx.client.endpoints.fill import FillGroup
-from rabbitx.client.endpoints.jwt import JWTGroup
-from rabbitx.client.endpoints.market import MarketGroup
-from rabbitx.client.endpoints.onboarding import OnboardingGroup, APIKey
-from rabbitx.client.endpoints.order import OrderGroup, OrderSide, OrderType, OrderStatus, TimeInForce
-from rabbitx.client.endpoints.orderbook import OrderBookGroup
-from rabbitx.client.endpoints.position import PositionGroup
-from rabbitx.client.endpoints.profile import ProfileGroup
-from rabbitx.client.endpoints.balance import BalanceGroup
-from rabbitx.client.endpoints.trade import TradeGroup
-from rabbitx.client.session import ClientSession
-from rabbitx.client.websocket import WSClient, WSClientCallback
+from rabbitx_python.client.endpoints.account import AccountGroup
+from rabbitx_python.client.endpoints.candle import CandleGroup, CandlePeriod
+from rabbitx_python.client.endpoints.fill import FillGroup
+from rabbitx_python.client.endpoints.jwt import JWTGroup
+from rabbitx_python.client.endpoints.market import MarketGroup
+from rabbitx_python.client.endpoints.onboarding import OnboardingGroup, APIKey
+from rabbitx_python.client.endpoints.order import OrderGroup, OrderSide, OrderType, OrderStatus, TimeInForce
+from rabbitx_python.client.endpoints.orderbook import OrderBookGroup
+from rabbitx_python.client.endpoints.position import PositionGroup
+from rabbitx_python.client.endpoints.profile import ProfileGroup
+from rabbitx_python.client.endpoints.balance import BalanceGroup
+from rabbitx_python.client.endpoints.trade import TradeGroup
+from rabbitx_python.client.session import ClientSession
+from rabbitx_python.client.websocket import WSClient, WSClientCallback
 
 
 class Client(ClientSession):

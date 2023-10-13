@@ -6,8 +6,8 @@ from requests import Session
 from web3.auto import w3
 from eth_account.signers.local import LocalAccount
 
-from rabbitx-python import const
-from rabbitx-python.payload import Payload
+from rabbitx_python import const
+from rabbitx_python.payload import Payload
 
 
 class ClientSession:

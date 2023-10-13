@@ -1,6 +1,6 @@
 from rabbitx import const
-from rabbitx.client import Client, CandlePeriod, OrderSide, OrderType
-from rabbitx.client import OrderStatus
+from rabbitx_python.client import Client, CandlePeriod, OrderSide, OrderType
+from rabbitx_python.client import OrderStatus
 import os
 from dotenv import load_dotenv
 

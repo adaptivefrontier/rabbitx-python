@@ -1,7 +1,7 @@
 import time
 from datetime import datetime
 
-from rabbitx.payload import Payload
+from rabbitx_python.payload import Payload
 
 
 def test_payload_hash():

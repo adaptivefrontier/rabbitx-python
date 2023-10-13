@@ -1,4 +1,4 @@
-from rabbitx-python.client.endpoint_group import EndpointGroup
+from rabbitx_python.client.endpoint_group import EndpointGroup
 
 
 class OrderBookGroup(EndpointGroup):

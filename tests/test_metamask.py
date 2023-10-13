@@ -1,7 +1,7 @@
 from datetime import datetime
 from web3.auto import w3
 
-from rabbitx.metamask import metamask_sign, MetamaskSignRequest, metamask_verify, MetamaskVerifyRequest
+from rabbitx_python.metamask import metamask_sign, MetamaskSignRequest, metamask_verify, MetamaskVerifyRequest
 
 
 def test_metamask_sign_verify():

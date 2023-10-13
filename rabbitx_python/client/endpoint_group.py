@@ -1,4 +1,4 @@
-from rabbitx-python.client.session import ClientSession
+from rabbitx_python.client.session import ClientSession
 
 
 class EndpointGroup:

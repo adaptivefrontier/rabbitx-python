@@ -4,11 +4,11 @@ sys.path.append(os.path.abspath('../'))
 
 import rabbitx
 from rabbitx import const
-from rabbitx.client import Client, CandlePeriod
+from rabbitx_python.client import Client, CandlePeriod
 import pytest
 from datetime import datetime
 
-from rabbitx.client.endpoints.order import OrderSide, OrderType, OrderStatus
+from rabbitx_python.client.endpoints.order import OrderSide, OrderType, OrderStatus
 import time
 
 private_key = '0x0000000000000000000000000000000000000000000000000000000001221104'

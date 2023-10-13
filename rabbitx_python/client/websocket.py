@@ -3,7 +3,7 @@ import json
 from websocket import WebSocketApp
 import rel
 
-from rabbitx-python.client import ClientSession
+from rabbitx_python.client import ClientSession
 
 
 class WSClientCallback:

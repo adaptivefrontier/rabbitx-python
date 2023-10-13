@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 
-from rabbitx-python import const
-from rabbitx-python.client.endpoint_group import EndpointGroup
-from rabbitx-python.metamask import MetamaskSignRequest, metamask_sign
-from rabbitx-python.util import hex2bytes
+from rabbitx_python import const
+from rabbitx_python.client.endpoint_group import EndpointGroup
+from rabbitx_python.metamask import MetamaskSignRequest, metamask_sign
+from rabbitx_python.util import hex2bytes
 
 
 @dataclass

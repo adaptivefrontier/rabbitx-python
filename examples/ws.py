@@ -1,6 +1,6 @@
 from websocket import WebSocketApp
 from rabbitx import const
-from rabbitx.client import Client, WSClient, WSClientCallback
+from rabbitx_python.client import Client, WSClient, WSClientCallback
 from pprint import pprint
 import os
 from dotenv import load_dotenv
