@@ -5,7 +5,7 @@ from eth_account.messages import encode_defunct
 from hexbytes import HexBytes
 from web3.auto import w3
 
-from rabbitx.util import hex2bytes
+from rabbitx-python.util import hex2bytes
 
 
 @dataclass

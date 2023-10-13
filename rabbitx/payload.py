@@ -2,7 +2,7 @@ import hashlib
 import hmac
 from datetime import datetime
 
-from rabbitx.util import hex2bytes
+from rabbitx-python.util import hex2bytes
 
 PAYLOAD_KEY_METHOD = 'method'
 PAYLOAD_KEY_PATH = 'path'

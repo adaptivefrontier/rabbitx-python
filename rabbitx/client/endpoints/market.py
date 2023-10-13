@@ -1,4 +1,4 @@
-from rabbitx.client.endpoint_group import EndpointGroup
+from rabbitx-python.client.endpoint_group import EndpointGroup
 
 
 class MarketGroup(EndpointGroup):
