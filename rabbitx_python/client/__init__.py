@@ -1,7 +1,7 @@
 from rabbitx_python.client.endpoints.account import AccountGroup
 from rabbitx_python.client.endpoints.balance import BalanceGroup
 from rabbitx_python.client.endpoints.candle import CandleGroup, CandlePeriod
-from rabbitx_python.client.endpoints.deadman import DeadmanGroup
+#from rabbitx_python.client.endpoints.deadman import DeadmanGroup
 from rabbitx_python.client.endpoints.fill import FillGroup
 from rabbitx_python.client.endpoints.jwt import JWTGroup
 from rabbitx_python.client.endpoints.market import MarketGroup
@@ -66,4 +66,4 @@ class Client(ClientSession):
         self.positions = PositionGroup(self)
         self.profile = ProfileGroup(self)
         self.balance = BalanceGroup(self)
-        self.deadman = DeadmanGroup(self)
+        #self.deadman = DeadmanGroup(self)
