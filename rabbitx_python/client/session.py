@@ -5,6 +5,7 @@ import requests
 from requests import Session
 from web3.auto import w3
 from eth_account.signers.local import LocalAccount
+from ulid import ULID
 
 from rabbitx_python import const
 from rabbitx_python.payload import Payload
@@ -18,10 +19,12 @@ class ClientSession:
     private_key: str
     api_key: str
     api_secret: str
-    _jwt: str
+    public_jwt: str
+    private_jwt: str
     _current_timestamp: int
     _signature: str
     profile_id: int
+    exchange: str
 
     def __init__(
         self,
@@ -30,7 +33,9 @@ class ClientSession:
         private_key: str = None,
         api_key: str = None,
         api_secret: str = None,
-        jwt: str = None,
+        public_jwt: str = None,
+        private_jwt: str = None,
+        exchange: str = 'rbx',
     ):
         self.session = requests.Session()
         self.api_url = api_url.rstrip('/')
@@ -38,13 +43,16 @@ class ClientSession:
         self.private_key = private_key
         self.api_key = api_key
         self.api_secret = api_secret
-        self._jwt = jwt
+        self.public_jwt = public_jwt
+        self.private_jwt = private_jwt
         self._current_timestamp = 0
         self._signature = ''
+        self.exchange = exchange
         original_post = self.session.post
         original_get = self.session.get
         original_put = self.session.put
         original_delete = self.session.delete
+
 
         def patched_post(*args, **kwargs):
             result = original_post(*args, **kwargs)
@@ -89,12 +97,15 @@ class ClientSession:
     @property
     def headers(self) -> dict[str, str]:
         headers = {'RBT-TS': str(self.expiration_timestamp)}
+        headers['Request-ID'] = str(ULID())
 
         if self.api_key:
             headers['RBT-API-KEY'] = self.api_key
 
         if self._signature:
             headers['RBT-SIGNATURE'] = self._signature
+        if self.exchange != 'rbx':
+            headers['EID'] = self.exchange
 
         return headers
 

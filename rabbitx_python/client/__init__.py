@@ -1,14 +1,17 @@
 from rabbitx_python.client.endpoints.account import AccountGroup
+from rabbitx_python.client.endpoints.balance import BalanceGroup
 from rabbitx_python.client.endpoints.candle import CandleGroup, CandlePeriod
+from rabbitx_python.client.endpoints.deadman import DeadmanGroup
 from rabbitx_python.client.endpoints.fill import FillGroup
 from rabbitx_python.client.endpoints.jwt import JWTGroup
 from rabbitx_python.client.endpoints.market import MarketGroup
-from rabbitx_python.client.endpoints.onboarding import OnboardingGroup, APIKey
-from rabbitx_python.client.endpoints.order import OrderGroup, OrderSide, OrderType, OrderStatus, TimeInForce
+from rabbitx_python.client.endpoints.onboarding import APIKey, OnboardingGroup
+from rabbitx_python.client.endpoints.order import (OrderGroup, OrderSide,
+                                                   OrderStatus, OrderType,
+                                                   TimeInForce)
 from rabbitx_python.client.endpoints.orderbook import OrderBookGroup
 from rabbitx_python.client.endpoints.position import PositionGroup
 from rabbitx_python.client.endpoints.profile import ProfileGroup
-from rabbitx_python.client.endpoints.balance import BalanceGroup
 from rabbitx_python.client.endpoints.trade import TradeGroup
 from rabbitx_python.client.session import ClientSession
 from rabbitx_python.client.websocket import WSClient, WSClientCallback
@@ -36,7 +39,9 @@ class Client(ClientSession):
         private_key: str = None,
         api_key: str = None,
         api_secret: str = None,
-        jwt: str = None,
+        public_jwt: str = None,
+        private_jwt: str = None,
+        exchange: str = None,
     ):
         super(Client, self).__init__(
             api_url,
@@ -44,7 +49,9 @@ class Client(ClientSession):
             private_key,
             api_key,
             api_secret,
-            jwt,
+            public_jwt,
+            private_jwt,
+            exchange,
         )
 
         self.onboarding = OnboardingGroup(self)
@@ -59,3 +66,4 @@ class Client(ClientSession):
         self.positions = PositionGroup(self)
         self.profile = ProfileGroup(self)
         self.balance = BalanceGroup(self)
+        self.deadman = DeadmanGroup(self)

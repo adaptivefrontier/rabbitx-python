@@ -28,14 +28,14 @@ class OnboardingGroup(EndpointGroup):
             headers=self.session.headers,
         ).json()
 
-        if err := resp['error']:
-            raise Exception(err)
+        if resp['success'] != True:
+            raise Exception(resp['error'])
 
         if resp['success']:
             api_secret = resp['result'][0]['apiSecret']
             self.session.api_key = api_secret['Key']
             self.session.api_secret = api_secret['Secret']
-            self.session._jwt = resp['result'][0]['jwt']
+            self.session.public_jwt = resp['result'][0]['jwt']
             self.session.profile_id = resp['result'][0]['profile']['id']
 
         return resp['result'][0]

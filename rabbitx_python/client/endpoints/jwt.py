@@ -17,9 +17,9 @@ class JWTGroup(EndpointGroup):
             headers=self.session.headers,
         ).json()
 
-        if err := resp['error']:
-            raise Exception(err)
+        if resp['success'] != True:
+            raise Exception(resp['error'])
 
-        self.session._jwt = resp['result'][0]['jwt']
+        self.session.private_jwt = resp['result'][0]['jwt']
 
         return resp['result'][0]['jwt']
