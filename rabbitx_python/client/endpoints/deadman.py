@@ -1,7 +1,7 @@
 import enum
 
-from rabbitx.client.endpoint_group import EndpointGroup
-    
+from rabbitx_python.client.endpoint_group import EndpointGroup
+
 
 class DeadmanGroup(EndpointGroup):
 
@@ -14,7 +14,7 @@ class DeadmanGroup(EndpointGroup):
             method='POST',
             path='/cancel_all_after',
         )
-       
+
         self.session.sign_request(data)
         resp = self.session.session.post(
             f'{self.session.api_url}/cancel_all_after',
@@ -32,7 +32,7 @@ class DeadmanGroup(EndpointGroup):
             method='DELETE',
             path='/cancel_all_after',
         )
-            
+
         self.session.sign_request(data)
         resp = self.session.session.delete(
             f'{self.session.api_url}/cancel_all_after',
